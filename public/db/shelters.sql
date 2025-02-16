@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 16, 2025 at 11:42 PM
+-- Generation Time: Feb 17, 2025 at 12:35 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -21,28 +21,6 @@ SET time_zone = "+00:00";
 -- Database: `pet_project`
 --
 
--- --------------------------------------------------------
-
---
--- Table structure for table `shelters`
---
-
-CREATE TABLE `shelters` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `country_id` int(11) NOT NULL,
-  `city_id` int(11) NOT NULL,
-  `state_id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `website` varchar(255) DEFAULT NULL,
-  `services` text DEFAULT NULL,
-  `location` varchar(255) NOT NULL,
-  `landmark` varchar(255) DEFAULT NULL,
-  `phone_number` varchar(255) DEFAULT NULL,
-  `logo` varchar(255) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
 --
 -- Dumping data for table `shelters`
 --
@@ -53,26 +31,6 @@ INSERT INTO `shelters` (`id`, `country_id`, `city_id`, `state_id`, `name`, `webs
 (3, 0, 0, 0, 'Columbian Animal Hospital', 'https://columbiaanimalhosp.wixsite.com/columbia-animal-hosp', 'Veterinary Diagnostic Labs, Emergency Care Services, Pet Wellness Exams, Open 24/7', '{\"lat\":30.0598317,\"lng\":30.9539869}', NULL, '[{\"number\":\"01020405694\"}]', 'images/shelter/01JM8DNJDJ0MWA3JX57JJ9VMNC.png', '2025-02-01 21:21:22', '2025-02-16 20:22:08'),
 (4, 0, 0, 0, 'Dr Abdelwahab Animal Clinic', 'https://petdoctorsanimalcl.wixsite.com/website', 'Emergency care services, pet wellness exams', '{\"lat\":30.0562636,\"lng\":30.9520366}', NULL, '[{\"number\":\"01000113877\"}]', 'images/shelter/01JM8EGD9B9ZSVEK3M5J7JP48Q.png', '2025-02-01 21:21:26', '2025-02-16 20:36:48'),
 (5, 0, 0, 0, 'American Vet Clinic', 'https://www.americanvetcenter.com/', 'Pet wellness exams, radiology and laboratory diagnostics, emergency care services, vaccinations, surgery, health and travel certificates, boarding and hospitalization, grooming, dental care, and complete pharmacy', '{\"lat\":30.0524345,\"lng\":30.968333}', NULL, '[{\"number\":\"01110802802\"},{\"number\":\"01210813869\"},{\"number\":\"(02) 38956948\"}]', 'images/shelter/01JM8EHZ7ASESY364B1QAA7QM1.jpg', '2025-02-01 21:21:29', '2025-02-16 20:37:39');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `shelters`
---
-ALTER TABLE `shelters`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `shelters`
---
-ALTER TABLE `shelters`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
