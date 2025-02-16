@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\Settings;
+use App\Models\Shelter;
+use App\Models\Slider;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\View;
 
@@ -17,9 +19,15 @@ class PageViewController extends Controller {
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 #||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
     public function homePage() {
+        $slider = Slider::query()->get();
+        $about = About::query()->first();
+        $shelters  = Shelter::query()->take(3)->get();
+        return view('home')->with([
+            'slider'=> $slider ,
+            'about'=> $about ,
+            'shelters'=> $shelters ,
+        ]);
 
-
-        return view('home');
     }
 
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
