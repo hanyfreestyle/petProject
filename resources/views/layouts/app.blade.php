@@ -69,6 +69,11 @@
 <script src="{{ asset('assets/js/dark-rtl.js') }}"></script>
 <script src="{{ asset('assets/js/active.js') }}"></script>
 <script src="{{ asset('assets/js/pwa.js') }}"></script>
+
+
+
+@stack('scripts')
+
 </body>
 
 

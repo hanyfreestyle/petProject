@@ -23,3 +23,7 @@ Route::get('/about', [PageViewController::class, 'aboutPage'])->name('web.about'
 Route::get('/contact', [PageViewController::class, 'contactPage'])->name('web.contact');
 Route::get('/lost-pet', [PageViewController::class, 'lostPet'])->name('web.lostPet');
 Route::get('/find-pet', [PageViewController::class, 'findPet'])->name('web.findPet');
+
+
+Route::get('/getNearbyPlaces', [PageViewController::class, 'getNearbyPlaces'])->name('web.getNearbyPlaces');
+

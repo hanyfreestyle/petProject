@@ -70,7 +70,7 @@
                                         </div>
                                         <div class="text-content">
                                             <h2>{{$shelter->name}}</h2>
-                                            <p class="mb-5">{{$shelter->location}}</p>
+{{--                                            <p class="mb-5">{{$shelter->location}}</p>--}}
                                             <p></p>
                                         </div>
                                     </div>

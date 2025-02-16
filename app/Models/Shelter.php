@@ -20,6 +20,7 @@ class Shelter extends Model {
 
     protected $casts = [
         'phone_number' => 'array',
+        'location' => 'array',
     ];
 
 }

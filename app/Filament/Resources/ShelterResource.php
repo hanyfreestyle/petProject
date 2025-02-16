@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\ShelterResource\Pages;
 use App\Filament\Resources\ShelterResource\RelationManagers;
 use App\Models\Shelter;
+use ArberMustafa\FilamentLocationPickrField\Forms\Components\LocationPickr;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
@@ -30,6 +31,26 @@ class ShelterResource extends Resource {
             ->schema([
                 Section::make('Shelter Details')
                     ->schema([
+
+
+                        LocationPickr::make('location')
+                            ->mapControls([
+                                'mapTypeControl'    => true,
+                                'scaleControl'      => true,
+                                'streetViewControl' => true,
+                                'rotateControl'     => true,
+                                'fullscreenControl' => true,
+                                'zoomControl'       => false,
+                            ])
+                            ->defaultZoom(10)
+                            ->draggable()
+                            ->clickable()
+                            ->height('40vh')
+                            // {"lat":29.93708932842956,"lng":31.200219124460776}
+                            ->defaultLocation([29.93708932842956,31.200219124460776])
+                            ->myLocationButtonLabel('My location'),
+
+
                         TextInput::make('name')
                             ->label('Shelter Name')
                             ->required()
@@ -44,9 +65,9 @@ class ShelterResource extends Resource {
                             ->label('Services')
                             ->maxLength(500),
 
-                        TextInput::make('location')
-                            ->label('Location')
-                            ->required(),
+//                        TextInput::make('location')
+//                            ->label('Location')
+//                            ->required(),
 
                         TextInput::make('landmark')
                             ->label('Landmark'),
@@ -74,7 +95,8 @@ class ShelterResource extends Resource {
                                 ->visibility('public')
                                 ->disk('public')
                                 ->directory('images/shelter')
-                                ->required()
+                                ->nullable()
+//                                ->required()
                                 ->columnSpanFull(),
                         ])->columnSpan(1)->columns(1),
 
