@@ -54,17 +54,19 @@
 
 
 
+let lat = '30.0435575';
+let long = '30.9839';
+let zoom = 14;
 
 
 
 
 
 
+        let mymap = L.map('mapid').setView([lat, long], zoom);
 
-        var mymap = L.map('mapid').setView([29.937089, 31.200219], 13);
 
-
-        var myIcon = L.icon({
+        let myIcon = L.icon({
             iconUrl: '{{asset('assets/maps-location_16972756.png')}}', // URL to the custom icon image
             iconSize: [48, 48], // size of the icon in pixels
             iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
@@ -77,12 +79,12 @@
             attribution: '© OpenStreetMap'
         }).addTo(mymap);
 
-        L.marker([29.937089, 31.200219], { icon: myIcon })
+        L.marker([lat, long], { icon: myIcon })
             .bindPopup(`mylocation`)
             .addTo(mymap)
             ;
 
-        var htmlContent;
+        let htmlContent;
 
         fetch('https://pet.test/getNearbyPlaces?lat=29.937089&lng=31.200219')
             .then(response => response.json())

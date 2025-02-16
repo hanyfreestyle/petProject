@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PageViewController;
 use Illuminate\Support\Facades\Route;
+use Livewire\Livewire;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,4 +27,19 @@ Route::get('/find-pet', [PageViewController::class, 'findPet'])->name('web.findP
 
 
 Route::get('/getNearbyPlaces', [PageViewController::class, 'getNearbyPlaces'])->name('web.getNearbyPlaces');
+
+
+/// fix Livewire3
+
+Livewire::setScriptRoute(function ($handle) {
+    return Route::get(env('Livewire_URL').'/livewire.js', $handle);
+});
+
+Livewire::setUpdateRoute(function ($handle) {
+    return Route::post(env('Livewire_URL').'/update', $handle);
+});
+/// fix Livewire3
+
+
+
 
