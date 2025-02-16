@@ -26,9 +26,9 @@ class CountryResource extends Resource
 
     protected static ?string $navigationLabel = 'Country';
 
-    protected static ?string $modelLabel = 'Employees Country';
+    protected static ?string $modelLabel = 'Countries';
 
-    protected static ?string $navigationGroup = 'System Management';
+    protected static ?string $navigationGroup = 'Location Management';
 
     protected static ?int $navigationSort = 1;
 
@@ -41,13 +41,13 @@ class CountryResource extends Resource
                         Forms\Components\TextInput::make('name')
                             ->required()
                             ->maxLength(255),
-                        Forms\Components\TextInput::make('code')
-                            ->required()
-                            ->maxLength(3),
-                        Forms\Components\TextInput::make('phonecode')
-                            ->required()
-                            ->numeric()
-                            ->maxLength(5),
+//                        Forms\Components\TextInput::make('code')
+//                            ->required()
+//                            ->maxLength(3),
+//                        Forms\Components\TextInput::make('phonecode')
+//                            ->required()
+//                            ->numeric()
+//                            ->maxLength(5),
                     ])
             ]);
     }
@@ -59,11 +59,11 @@ class CountryResource extends Resource
                 Tables\Columns\TextColumn::make('name')
                     ->searchable()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('code')
-                    ->searchable()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('phonecode')
-                    ->numeric(),
+//                Tables\Columns\TextColumn::make('code')
+//                    ->searchable()
+//                    ->sortable(),
+//                Tables\Columns\TextColumn::make('phonecode')
+//                    ->numeric(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -109,7 +109,6 @@ class CountryResource extends Resource
     {
         return [
             StatesRelationManager::class,
-            EmployeesRelationManager::class
         ];
     }
 

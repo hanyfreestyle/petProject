@@ -27,7 +27,7 @@ class CityResource extends Resource
 
     protected static ?string $modelLabel = 'City';
 
-    protected static ?string $navigationGroup = 'System Management';
+    protected static ?string $navigationGroup = 'Location Management';
 
     protected static ?int $navigationSort = 3;
 
@@ -99,7 +99,7 @@ class CityResource extends Resource
     public static function getRelations(): array
     {
         return [
-            EmployeesRelationManager::class
+
         ];
     }
 

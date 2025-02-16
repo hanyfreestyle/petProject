@@ -28,7 +28,7 @@ class StateResource extends Resource
 
     protected static ?string $modelLabel = 'States';
 
-    protected static ?string $navigationGroup = 'System Management';
+    protected static ?string $navigationGroup = 'Location Management';
 
     protected static ?int $navigationSort = 2;
 
@@ -103,7 +103,6 @@ class StateResource extends Resource
     {
         return [
             CitiesRelationManager::class,
-            EmployeesRelationManager::class
         ];
     }
 
