@@ -15,6 +15,7 @@ class Shelter extends Model {
         'location',
         'landmark',
         'phone_number',
+        'logo',
     ];
 
     protected $casts = [

@@ -23,8 +23,7 @@
                         </div>
 
                         <div class="form-group mb-3">
-                         <textarea class="form-control" name="textarea" cols="30" rows="10"
-                                   placeholder="Write details"></textarea>
+                         <textarea class="form-control" name="textarea" cols="30" rows="10" placeholder="Write details"></textarea>
                         </div>
                         <button class="btn btn-primary w-100">Send Now</button>
                     </form>

@@ -10,7 +10,7 @@
                         $photo =  Storage::disk('public')->url($slide['photo'])
                     @endphp
                     <div>
-                        <div class="single-hero-slide bg-overlay" style="background-image: url('{{$photo}}')">
+                        <div class="single-hero-slide bg-overlayX" style="background-image: url('{{$photo}}')">
                             <div class="h-100 d-flex align-items-center text-center">
                                 <div class="container">
                                     @if($slide['title'])
@@ -54,16 +54,24 @@
             <div class="testimonial-slide-one-wrapper ">
                 <div class="testimonial-slide testimonial-style1">
                     @foreach($shelters as $shelter)
+                        @php
+                            if (!empty($shelter['logo'])) {
+                                $photo =  Storage::disk('public')->url($shelter['logo']) ;
+                            }else{
+                               $photo = asset('assets/img/bg-img/20.jpg');
+                            }
+                        @endphp
                         <div>
                             <div class="card">
                                 <div class="card-body">
                                     <div class="single-testimonial-slide">
-                                        <div class="image-wrapper shadow"><img src="{{asset('assets/img/bg-img/20.jpg')}}" alt=""></div>
+                                        <div class="image-wrapper shadow">
+                                            <img src="{{$photo}}" alt="">
+                                        </div>
                                         <div class="text-content">
                                             <h2>{{$shelter->name}}</h2>
                                             <p class="mb-5">{{$shelter->location}}</p>
                                             <p></p>
-
                                         </div>
                                     </div>
                                 </div>

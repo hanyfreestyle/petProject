@@ -21,7 +21,7 @@ class PageViewController extends Controller {
     public function homePage() {
         $slider = Slider::query()->get();
         $about = About::query()->first();
-        $shelters  = Shelter::query()->take(3)->get();
+        $shelters  = Shelter::query()->get();
         return view('home')->with([
             'slider'=> $slider ,
             'about'=> $about ,

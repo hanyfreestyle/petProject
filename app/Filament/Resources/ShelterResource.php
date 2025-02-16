@@ -6,6 +6,7 @@ use App\Filament\Resources\ShelterResource\Pages;
 use App\Filament\Resources\ShelterResource\RelationManagers;
 use App\Models\Shelter;
 use Filament\Forms;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Textarea;
@@ -24,8 +25,7 @@ class ShelterResource extends Resource {
     protected static ?string $navigationIcon = 'heroicon-o-home';
     protected static ?string $navigationGroup = 'Animal Services';
 
-    public static function form(Forms\Form $form): Forms\Form
-    {
+    public static function form(Forms\Form $form): Forms\Form {
         return $form
             ->schema([
                 Section::make('Shelter Details')
@@ -51,49 +51,83 @@ class ShelterResource extends Resource {
                         TextInput::make('landmark')
                             ->label('Landmark'),
 
-                        Repeater::make('phone_number')
-                            ->label('Phone Numbers')
-                            ->schema([
-                                TextInput::make('number')
-                                    ->label('Phone Number')
-                                    ->tel()
-                                    ->required(),
-                            ])
-                            ->minItems(1)
-                            ->maxItems(5)
-                            ->columnSpanFull(),
-                    ])
-            ]);
+//                        Repeater::make('phone_number')
+//                            ->label('Phone Numbers')
+//                            ->schema([
+//                                TextInput::make('number')
+//                                    ->label('Phone Number')
+//                                    ->tel()
+//                                    ->required(),
+//                            ])
+//                            ->minItems(1)
+//                            ->maxItems(5)
+//                            ->columnSpanFull(),
+                    ])->columnSpan(2)->columns(1),
+
+
+                Forms\Components\Group::make()->schema([
+                    Section::make('Shelter Logo')
+                        ->schema([
+                            FileUpload::make('logo')
+                                ->label('Logo')
+                                ->image()
+                                ->visibility('public')
+                                ->disk('public')
+                                ->directory('images/shelter')
+                                ->required()
+                                ->columnSpanFull(),
+                        ])->columnSpan(1)->columns(1),
+
+                    Section::make('Shelter Phone Numbers')
+                        ->schema([
+
+                            Repeater::make('phone_number')
+                                ->label('Phone Numbers')
+                                ->schema([
+                                    TextInput::make('number')
+                                        ->label('Phone Number')
+                                        ->tel()
+                                        ->required(),
+                                ])
+                                ->minItems(1)
+                                ->maxItems(5)
+                                ->columnSpanFull(),
+                        ])->columnSpan(1)->columns(1)
+
+                ]),
+
+
+            ])->columns(3);
     }
 
     public static function table(Tables\Table $table): Tables\Table {
         return $table
             ->columns([
+
+                Tables\Columns\ImageColumn::make('logo'),
+
                 TextColumn::make('name')
                     ->sortable()
                     ->searchable(),
 
-                TextColumn::make('website')
-                    ->label('Website')
-                    ->url(fn($record) => $record->website, true),
-
-                TextColumn::make('location')
-                    ->sortable()
-                    ->searchable(),
+//                TextColumn::make('website')
+//                    ->label('Website')
+//                    ->url(fn($record) => $record->website, true),
+//
+//                TextColumn::make('location')
+//                    ->sortable()
+//                    ->searchable(),
 
                 BadgeColumn::make('phone_number')
                     ->label('Phone Numbers')
-                    ->formatStateUsing(function($state) {
-
-
-
-                        return implode(',',$state);
-                })
+                    ->formatStateUsing(function ($state) {
+                        return implode(',', $state);
+                    })
                     ->color('primary'),
 
-                TextColumn::make('created_at')
-                    ->label('Created At')
-                    ->dateTime(),
+//                TextColumn::make('created_at')
+//                    ->label('Created At')
+//                    ->dateTime(),
             ])
             ->filters([])
             ->actions([

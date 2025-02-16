@@ -1,0 +1,36 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Feb 16, 2025 at 07:07 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `pet_project`
+--
+
+--
+-- Dumping data for table `slider`
+--
+
+INSERT INTO `slider` (`id`, `title`, `description`, `url`, `photo`, `created_at`, `updated_at`) VALUES
+(1, NULL, NULL, NULL, 'images/slider/01JM7Z0KDGG583G1S36GVVNYPK.jpg', '2025-02-16 16:06:01', '2025-02-16 16:06:01'),
+(2, NULL, NULL, NULL, 'images/slider/01JM7Z1EMGFY3R8GFWBXE5GFYR.jpeg', '2025-02-16 16:06:29', '2025-02-16 16:06:29'),
+(3, NULL, NULL, NULL, 'images/slider/01JM7Z25S0N1GCYEZQDGABJKWY.jpeg', '2025-02-16 16:06:53', '2025-02-16 16:06:53');
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

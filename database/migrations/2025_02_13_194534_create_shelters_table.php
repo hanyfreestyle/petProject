@@ -18,6 +18,7 @@ return new class extends Migration {
             $table->string('location'); // الموقع
             $table->string('landmark')->nullable(); // علامة مميزة
             $table->string('phone_number')->nullable(); // رقم الهاتف
+            $table->string('logo')->nullable();
             $table->timestamps();
         });
     }
