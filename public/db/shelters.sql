@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 13, 2025 at 10:21 PM
+-- Generation Time: Feb 16, 2025 at 11:32 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -25,12 +25,12 @@ SET time_zone = "+00:00";
 -- Dumping data for table `shelters`
 --
 
-INSERT INTO `shelters` (`id`, `name`, `website`, `services`, `location`, `landmark`, `phone_number`, `created_at`, `updated_at`) VALUES
-(1, 'British Animal Hospital', 'https://britishanimalhospital.com/', 'VCTC, house calls, vaccinations, pet surgeries, hospitalization, microchip implantation, x-ray examination, ultrasounds, flea and tick control programs, travel certificates.', 'Business Point, Sheikh Zayed City, Giza Governorate - Sheikh Zayed, 6th October, Egypt', '4 Mix Mall – Beverly Hills- Sheikh Zayed', '[\n    {\"number\": \"+201224708702\"},\n    {\"number\": \"+201023330245\"},\n    {\"number\": \"+201101010474\"},\n    {\"number\": \"+201277778947\"}\n]\n', '2025-02-01 21:21:02', '2025-02-13 19:04:31'),
-(2, 'Dr Paws', 'https://sites.google.com/view/drpawsalsheikhzayed/dr-paws-vet-clinic?authuser=0', '24hours emergency and home visits (not all services are mentioned)', '2XJX+7WV Hayat Clinics, Cairo Governorate EG, First Al Sheikh Zayed, Giza Governorate 3244410', NULL, '[{\"number\":\"01030795778\"}]', '2025-02-01 21:21:14', '2025-02-13 19:18:29'),
-(3, 'Columbian Animal Hospital', 'https://columbiaanimalhosp.wixsite.com/columbia-animal-hosp', 'Veterinary Diagnostic Labs, Emergency Care Services, Pet Wellness Exams, Open 24/7', 'Icon Mall Gate 9 Beverly Hills - In front of Golds Gym Beverly Hills sheikh zayed', NULL, '[{\"number\":\"01020405694\"}]', '2025-02-01 21:21:22', '2025-02-13 19:19:16'),
-(4, 'Dr Abdelwahab Animal Clinic', 'https://petdoctorsanimalcl.wixsite.com/website', 'Emergency care services, pet wellness exams', 'Badr Aldin Center, Second Al Sheikh Zayed, Giza Governorate 12588', NULL, '[{\"number\":\"01000113877\"}]', '2025-02-01 21:21:26', '2025-02-13 19:20:03'),
-(5, 'American Vet Clinic', 'https://www.americanvetcenter.com/', 'Pet wellness exams, radiology and laboratory diagnostics, emergency care services, vaccinations, surgery, health and travel certificates, boarding and hospitalization, grooming, dental care, and complete pharmacy', 'District 13, 1st Neighbourhood, St 12', NULL, '[{\"number\":\"01110802802\"},{\"number\":\"01210813869\"},{\"number\":\"(02) 38956948\"}]', '2025-02-01 21:21:29', '2025-02-13 19:20:34');
+INSERT INTO `shelters` (`id`, `country_id`, `city_id`, `state_id`, `name`, `website`, `services`, `location`, `landmark`, `phone_number`, `logo`, `created_at`, `updated_at`) VALUES
+(1, 0, 0, 0, 'British Animal Hospital', 'https://britishanimalhospital.com/', 'VCTC, house calls, vaccinations, pet surgeries, hospitalization, microchip implantation, x-ray examination, ultrasounds, flea and tick control programs, travel certificates.', '{\"lat\":30.0435575,\"lng\":30.9839}', '4 Mix Mall – Beverly Hills- Sheikh Zayed', '[\n    {\"number\": \"+201224708702\"},\n    {\"number\": \"+201023330245\"},\n    {\"number\": \"+201101010474\"},\n    {\"number\": \"+201277778947\"}\n]\n', 'images/shelter/01JM8CMYY2Q4NTXYN3EMSHFR5H.png', '2025-02-01 21:21:02', '2025-02-16 20:04:20'),
+(2, 0, 0, 0, 'Dr Paws', 'https://sites.google.com/view/drpawsalsheikhzayed/dr-paws-vet-clinic?authuser=0', '24hours emergency and home visits (not all services are mentioned)', '{\"lat\":30.031217975779867,\"lng\":30.997120141983032}', NULL, '[{\"number\":\"01030795778\"}]', 'images/shelter/01JM8BAR1V1H6ZBSSDJQ6EEBN9.png', '2025-02-01 21:21:14', '2025-02-16 19:41:17'),
+(3, 0, 0, 0, 'Columbian Animal Hospital', 'https://columbiaanimalhosp.wixsite.com/columbia-animal-hosp', 'Veterinary Diagnostic Labs, Emergency Care Services, Pet Wellness Exams, Open 24/7', '{\"lat\":30.0598317,\"lng\":30.9539869}', NULL, '[{\"number\":\"01020405694\"}]', 'images/shelter/01JM8DNJDJ0MWA3JX57JJ9VMNC.png', '2025-02-01 21:21:22', '2025-02-16 20:22:08'),
+(4, 0, 0, 0, 'Dr Abdelwahab Animal Clinic', 'https://petdoctorsanimalcl.wixsite.com/website', 'Emergency care services, pet wellness exams', '{\"lat\":30.0562636,\"lng\":30.9520366}', NULL, '[{\"number\":\"01000113877\"}]', 'images/shelter/01JM8BNW4BK5EGFVY0RG7PCTCT.jpg', '2025-02-01 21:21:26', '2025-02-16 19:47:21'),
+(5, 0, 0, 0, 'American Vet Clinic', 'https://www.americanvetcenter.com/', 'Pet wellness exams, radiology and laboratory diagnostics, emergency care services, vaccinations, surgery, health and travel certificates, boarding and hospitalization, grooming, dental care, and complete pharmacy', '{\"lat\":30.0524345,\"lng\":30.968333}', NULL, '[{\"number\":\"01110802802\"},{\"number\":\"01210813869\"},{\"number\":\"(02) 38956948\"}]', 'images/shelter/01JM8C6G3629DY2GRV7M42XPHW.jpg', '2025-02-01 21:21:29', '2025-02-16 19:56:26');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

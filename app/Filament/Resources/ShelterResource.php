@@ -40,14 +40,15 @@ class ShelterResource extends Resource {
                                 'streetViewControl' => true,
                                 'rotateControl'     => true,
                                 'fullscreenControl' => true,
-                                'zoomControl'       => false,
+                                'zoomControl'       => true,
                             ])
-                            ->defaultZoom(10)
+                            ->defaultZoom(15)
                             ->draggable()
                             ->clickable()
                             ->height('40vh')
-                            // {"lat":29.93708932842956,"lng":31.200219124460776}
-                            ->defaultLocation([29.93708932842956,31.200219124460776])
+
+//                            ->defaultLocation([29.93708932842956,31.200219124460776])
+                            ->defaultLocation([30.0435575,30.98390])
                             ->myLocationButtonLabel('My location'),
 
 
