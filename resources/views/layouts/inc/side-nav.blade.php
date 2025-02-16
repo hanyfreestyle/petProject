@@ -6,60 +6,48 @@
 
     <div class="offcanvas-body p-0">
         <div class="sidenav-wrapper">
-            <!-- Sidenav Profile -->
             <div class="sidenav-profile bg-gradient">
-                <div class="sidenav-style1"></div>
-
-                <!-- User Thumbnail -->
-                <div class="user-profile">
-                    <img src="img/bg-img/2.jpg" alt="">
+                <div class="sideLogo">
+                    <img src="{{ asset('images/fav/side-logo.png') }}" style="max-width: 70%!important;" alt="">
                 </div>
-
-                <!-- User Info -->
                 <div class="user-info">
-                    <h6 class="user-name mb-0">Affan Islam</h6>
-                    <span>CEO, Designing World</span>
+                    <h6 class="user-name mb-0">{{$settings->slogan}}</h6>
                 </div>
             </div>
 
-            <!-- Sidenav Nav -->
             <ul class="sidenav-nav ps-0">
                 <li>
-                    <a href="home.html"><i class="bi bi-house-door"></i> Home</a>
-                </li>
-                <li>
-                    <a href="elements.html"><i class="bi bi-heart"></i> Elements
-                        <span class="badge bg-danger rounded-pill ms-2">220+</span>
+                    <a href="{{route('web.home')}}">
+                        <i class="fa-solid fa-house-chimney"></i>
+                        {{__('web.menu_home')}}
                     </a>
                 </li>
                 <li>
-                    <a href="pages.html"><i class="bi bi-folder2-open"></i> Pages
-                        <span class="badge bg-success rounded-pill ms-2">100+</span>
+                    <a href="{{route('web.about')}}">
+                        <i class="fa-solid fa-comment-dots"></i>
+                        {{__('web.menu_about')}}
+                    </a>
+                </li>
+
+                <li class="active">
+                    <a href="{{route('web.findPet')}}">
+                        <i class="fa-solid fa-paw"></i>
+                        {{__('web.menu_emergency')}}
                     </a>
                 </li>
                 <li>
-                    <a href="#"><i class="bi bi-cart-check"></i> Shop</a>
-                    <ul>
-                        <li>
-                            <a href="shop-grid.html"> Shop Grid</a>
-                        </li>
-                        <li>
-                            <a href="shop-list.html"> Shop List</a>
-                        </li>
-                        <li>
-                            <a href="shop-details.html"> Shop Details</a>
-                        </li>
-                        <li>
-                            <a href="cart.html"> Cart</a>
-                        </li>
-                        <li>
-                            <a href="checkout.html"> Checkout</a>
-                        </li>
-                    </ul>
+                    <a href="{{route('web.lostPet')}}">
+                        <i class="fa-solid fa-dog"></i>
+                        {{__('web.menu_lost_pet')}}
+                    </a>
                 </li>
                 <li>
-                    <a href="settings.html"><i class="bi bi-gear"></i> Settings</a>
+                    <a href="{{route('web.contact')}}">
+                        <i class="fa-solid fa-phone-volume"></i>
+                        {{__('web.menu_contact')}}
+                    </a>
                 </li>
+
                 <li>
                     <div class="night-mode-nav">
                         <i class="bi bi-moon"></i> Night Mode
@@ -68,29 +56,39 @@
                         </div>
                     </div>
                 </li>
-                <li>
-                    <a href="login.html"><i class="bi bi-box-arrow-right"></i> Logout</a>
-                </li>
+
             </ul>
 
-            <!-- Social Info -->
+
             <div class="social-info-wrap">
-                <a href="#">
-                    <i class="bi bi-facebook"></i>
-                </a>
-                <a href="#">
-                    <i class="bi bi-twitter"></i>
-                </a>
-                <a href="#">
-                    <i class="bi bi-linkedin"></i>
-                </a>
+                @if($settings->facebook ?? null)
+                    <a href="{{$settings->facebook}}">
+                        <i class="fa-brands fa-square-facebook"></i>
+                    </a>
+                @endif
+                @if($settings->twitter ?? null)
+                    <a href="{{$settings->twitter}}">
+                        <i class="fa-brands fa-square-x-twitter"></i>
+                    </a>
+                @endif
+                @if($settings->instagram ?? null)
+                    <a href="{{$settings->instagram}}">
+                        <i class="fa-brands fa-square-instagram"></i>
+                    </a>
+                @endif
+
+                @if($settings->linkedin ?? null)
+                    <a href="{{$settings->linkedin}}">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                @endif
+
             </div>
 
             <!-- Copyright Info -->
             <div class="copyright-info">
                 <p>
-                    <span id="copyrightYear"></span>
-                    &copy; Made by <a href="#"> Designing World</a>
+                    &copy; All Rights Reserved <a href="#"> {{$settings->name}}</a>
                 </p>
             </div>
         </div>

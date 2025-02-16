@@ -7,22 +7,21 @@
     <meta name="theme-color" content="#0134d4">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="icon" href="{{ asset('assets/img/core-img/favicon.ico') }}">
-    <title>Affan - PWA Mobile HTML Template</title>
+    <link rel="icon" href="{{ asset('images/fav/fav.png') }}">
+    <title>{{$settings->name}} - {{$settings->slogan}} </title>
     <meta name="description" content="">
     <link rel="stylesheet" href="{{ asset('assets/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-{{--    <!-- Web App Manifest -->--}}
-{{--    <link rel="manifest" href="manifest.json">--}}
+
 </head>
 
 <body>
-<!-- Preloader -->
-{{--<div id="preloader">--}}
-{{--    <div class="spinner-grow text-primary" role="status">--}}
-{{--        <span class="visually-hidden">Loading...</span>--}}
-{{--    </div>--}}
-{{--</div>--}}
+
+<div id="preloader">
+    <div class="spinner-grow text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
 
 <div class="internet-connection-status" id="internetStatus"></div>
 
@@ -32,7 +31,7 @@
         <div class="header-content header-style-five position-relative d-flex align-items-center justify-content-between">
             <div class="logo-wrapper">
                 <a href="{{route('web.home')}}">
-                    <img src="{{ asset('assets/img/core-img/logo.png') }}" alt="">
+                    <img src="{{ asset('images/fav/logo.png') }}" alt="">
                 </a>
             </div>
             <div class="navbar--toggler" id="affanNavbarToggler" data-bs-toggle="offcanvas" data-bs-target="#affanOffcanvas"
@@ -49,7 +48,7 @@
 @include('layouts.inc.side-nav')
 
 <div class="page-content-wrapper">
-{{--@yield('content')--}}
+@yield('content')
 </div>
 
 @include('layouts.inc.footer')
