@@ -98,7 +98,6 @@ class SettingsResource extends Resource {
                         ->maxLength(255)
                         ->default(null),
                     Forms\Components\TextInput::make('map_url')
-                        ->maxLength(255)
                         ->default(null),
                     Forms\Components\Toggle::make('map_is_active'),
                 ])->columnSpan(2)->columns(1),

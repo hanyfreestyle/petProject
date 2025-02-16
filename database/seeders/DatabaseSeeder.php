@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\About;
 use App\Models\Settings;
 use App\Models\Shelter;
 use App\Models\User;
@@ -14,6 +15,10 @@ class DatabaseSeeder extends Seeder {
 
         User::unguard();
         $tablePath = public_path('db/users.sql');
+        DB::unprepared(file_get_contents($tablePath));
+
+        About::unguard();
+        $tablePath = public_path('db/about.sql');
         DB::unprepared(file_get_contents($tablePath));
 
         Settings::unguard();

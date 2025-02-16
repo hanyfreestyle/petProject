@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\About;
 use App\Models\Settings;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\View;
@@ -32,9 +33,11 @@ class PageViewController extends Controller {
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 #||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
     public function aboutPage() {
+        $about = About::query()->first();
 
-
-        return view('about');
+        return view('about')->with([
+            'about'=> $about ,
+        ]);
     }
 
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

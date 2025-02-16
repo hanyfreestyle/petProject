@@ -9,8 +9,12 @@ return new class extends Migration {
     public function up(): void {
         Schema::create('about', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->default('Helping Paws');
-            $table->longText('description')->nullable();
+            $table->string('title');
+            $table->text('description');
+            $table->string('title_2')->nullable();
+            $table->text('description_2')->nullable();
+            $table->string('title_3')->nullable();
+            $table->text('description_3')->nullable();
             $table->string('photo')->nullable();
             $table->timestamps();
 
