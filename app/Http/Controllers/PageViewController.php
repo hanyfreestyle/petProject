@@ -71,9 +71,9 @@ class PageViewController extends Controller {
     public function getNearbyPlaces(Request $request) {
         $lat = $request->lat;
         $lng = $request->lng;
-        $radius = 1000; // النطاق بالكيلومترات
+        $radius = 50; // النطاق بالكيلومترات
 
-        $places = Shelter::select('name', 'website', 'location')
+        $places = Shelter::select('name', 'website', 'location','logo','phone_number','services')
             ->selectRaw('( 6371 * acos( cos( radians(?) ) * cos( radians( json_extract(location, "$.lat") ) )
         * cos( radians( json_extract(location, "$.lng") ) - radians(?) ) + sin( radians(?) )
         * sin( radians( json_extract(location, "$.lat") ) ) ) ) AS distance', [$lat, $lng, $lat])

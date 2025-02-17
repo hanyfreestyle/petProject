@@ -7,7 +7,16 @@
     <meta name="theme-color" content="#0134d4">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="manifest" href="{{ asset('manifest.json')}}">
+
     <link rel="icon" href="{{ asset('images/fav/fav.png') }}">
+
+    <link rel="apple-touch-icon" href="{{ asset('images/fav/fav.png') }}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('images/fav/fav.png') }}">
+    <link rel="apple-touch-icon" sizes="167x167" href="{{ asset('images/fav/fav.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/fav/fav.png') }}">
+
     <title>{{$settings->name}} - {{$settings->slogan}} </title>
     <meta name="description" content="">
     <link rel="stylesheet" href="{{ asset('assets/style.css') }}">

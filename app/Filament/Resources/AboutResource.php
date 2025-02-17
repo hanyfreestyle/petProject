@@ -11,6 +11,7 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -20,6 +21,19 @@ class AboutResource extends Resource {
     protected static ?string $model = About::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
+
+    // Disable the "Add" action
+    public static function canCreate(): bool
+    {
+        return false;
+    }
+
+    // Disable the "Delete" action
+    public static function canDelete($record): bool
+    {
+        return false;
+    }
 
     public static function form(Form $form): Form {
         return $form
@@ -66,14 +80,14 @@ class AboutResource extends Resource {
     public static function table(Table $table): Table {
         return $table
             ->columns([
+                ImageColumn::make('photo'),
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('title_2')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('title_3')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('photo')
-                    ->searchable(),
+
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

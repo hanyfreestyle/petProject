@@ -21,6 +21,17 @@ class SettingsResource extends Resource {
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
 
+    public static function canCreate(): bool
+    {
+        return false;
+    }
+
+    // Disable the "Delete" action
+    public static function canDelete($record): bool
+    {
+        return false;
+    }
+
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 #||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
     public function mount() {
