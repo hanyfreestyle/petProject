@@ -27,9 +27,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{route('web.contact')}}">
+                    {{--<a href="{{route('web.contact')}}">
                         <i class="fa-solid fa-phone-volume"></i>
                         <span>{{__('web.menu_contact')}}</span>
+                    </a>--}}
+                    <a href="{{route('web.shelterIndex')}}">
+                        <i class="fa-solid fa-building-shield"></i>
+                        <span>Shelters</span>
                     </a>
                 </li>
             </ul>

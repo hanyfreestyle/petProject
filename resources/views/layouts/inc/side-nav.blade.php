@@ -88,7 +88,7 @@
             <!-- Copyright Info -->
             <div class="copyright-info">
                 <p>
-                    &copy; All Rights Reserved <a href="#"> {{$settings->name}}</a>
+                    &copy; All Rights Reserved <a href="{{route('web.home')}}"> {{$settings->name}}</a>
                 </p>
             </div>
         </div>

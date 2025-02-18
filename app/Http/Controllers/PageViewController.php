@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\About;
+use App\Models\PetHelpRequest;
 use App\Models\Settings;
 use App\Models\Shelter;
 use App\Models\Slider;
@@ -11,12 +12,7 @@ use Illuminate\Support\Facades\View;
 
 class PageViewController extends Controller {
 
-    public function __construct() {
 
-        $settings =  Settings::query()->first();
-        View::share('settings', $settings);
-
-    }
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 #||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
     public function homePage() {
@@ -30,6 +26,10 @@ class PageViewController extends Controller {
         ]);
 
     }
+
+
+
+
 
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 #||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||

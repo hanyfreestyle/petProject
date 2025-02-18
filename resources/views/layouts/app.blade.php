@@ -35,23 +35,11 @@
 <div class="internet-connection-status" id="internetStatus"></div>
 
 
-<div class="header-area" id="headerArea">
-    <div class="container">
-        <div class="header-content header-style-five position-relative d-flex align-items-center justify-content-between">
-            <div class="logo-wrapper">
-                <a href="{{route('web.home')}}">
-                    <img src="{{ asset('images/fav/logo.png') }}" alt="">
-                </a>
-            </div>
-            <div class="navbar--toggler" id="affanNavbarToggler" data-bs-toggle="offcanvas" data-bs-target="#affanOffcanvas"
-                 aria-controls="affanOffcanvas">
-                <span class="d-block"></span>
-                <span class="d-block"></span>
-                <span class="d-block"></span>
-            </div>
-        </div>
-    </div>
-</div>
+@if(isset($backUrl))
+    @include('layouts.inc.header-center')
+@else
+    @include('layouts.inc.header-right')
+@endif
 
 
 @include('layouts.inc.side-nav')

@@ -41,7 +41,19 @@
             </div>
         </div>
     </div>
+    <div class="pt-3"></div>
+    <div class="container">
+        <div class="card card-bg-img bg-img bg-overlay" style="background-image: url('{{asset('assets/img/lost-dog-e1437230825416.jpg')}}')">
+            <div class="card-body p-5 direction-rtl">
+                <h2 class="text-white display-3 mb-3">Help Us to Find Max!</h2>
 
+                <h3>Missing!</h3><span>Last seen At .....</span><br/>
+                <br/>
+
+                <a class="btn btn-warning" href="{{route('web.lostPetIndex')}}">Have You Seen Me?</a>
+            </div>
+        </div>
+    </div>
 
     @if(count($shelters) > 0)
         <div class="container">
@@ -71,7 +83,12 @@
                                         <div class="text-content">
                                             <h2>{{$shelter->name}}</h2>
 {{--                                            <p class="mb-5">{{$shelter->location}}</p>--}}
-                                            <p></p>
+                                            <p>{{Str::of($shelter->services)->limit(50)}}</p>
+                                            <p>
+                                                <a class="btn btn-info rounded-pill" href="{{route('web.shelterView',['id'=>$shelter->id])}}">
+                                                    <i class="fa-solid fa-handshake-angle"></i>
+                                                    Learn More</a>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>

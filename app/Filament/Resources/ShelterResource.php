@@ -26,6 +26,11 @@ class ShelterResource extends Resource {
     protected static ?string $navigationIcon = 'heroicon-o-home';
     protected static ?string $navigationGroup = 'Animal Services';
 
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
+
     public static function form(Forms\Form $form): Forms\Form {
         return $form
             ->schema([
@@ -166,6 +171,13 @@ class ShelterResource extends Resource {
         return [
             //
         ];
+    }
+
+
+
+    public static function getGloballySearchableAttributes(): array
+    {
+        return ['name'];
     }
 
     public static function getPages(): array {
